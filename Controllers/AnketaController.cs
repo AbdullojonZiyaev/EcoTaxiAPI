@@ -19,7 +19,7 @@ namespace EcoTaxiAPI.Controllers
 
             var documentStream = _templateService.FillTemplate(anketaDTO);
 
-            _templateService.SendEmailWithAttachment(documentStream, anketaDTO.email, "Your Anketa Document", "Please find attached your Anketa document.");
+            _templateService.SendEmailWithAttachment(documentStream, anketaDTO.full_name + " Anketa Document", anketaDTO.full_name + " anketa");
 
             return Ok("Email sent.");
         }

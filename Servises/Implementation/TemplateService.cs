@@ -71,7 +71,7 @@ namespace EcoTaxiAPI.Services
             }
         }
 
-        public void SendEmailWithAttachment(MemoryStream documentStream, string toEmail, string subject, string body)
+        public void SendEmailWithAttachment(MemoryStream documentStream,  string subject, string body)
         {
             try { 
             documentStream.Position = 0;
@@ -90,7 +90,7 @@ namespace EcoTaxiAPI.Services
                 Body = body,
                 IsBodyHtml = true,
             };
-            mailMessage.To.Add(toEmail);
+            mailMessage.To.Add(smtpSettings.RecipientEmail);
 
             // Attach the generated document
             mailMessage.Attachments.Add(new Attachment(documentStream, "AnketaFilled.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"));
