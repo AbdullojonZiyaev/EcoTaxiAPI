@@ -1,5 +1,4 @@
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using EcoTaxiAPI.Data;
 using EcoTaxiAPI.Middleware;
 using EcoTaxiAPI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -23,17 +22,8 @@ builder.Services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add EF Core DbContext
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
-
 //Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-
-
-// Register AnketaService
-builder.Services.AddScoped<IAnketaService, AnketaService>();
 
 //Register TemplateService 
 string templatePath = Path.Combine(builder.Environment.ContentRootPath, "Templates", "AnketaTemplate.docx");

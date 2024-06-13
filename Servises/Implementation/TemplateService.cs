@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using EcoTaxiAPI.Exceptions;
 using EcoTaxiAPI.Services.Implementation.Helpers;
+
 namespace EcoTaxiAPI.Services
 {
     public class TemplateService(string templatePath, SmtpSettings smtpSettings) : ITemplateService
