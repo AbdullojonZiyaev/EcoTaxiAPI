@@ -11,7 +11,7 @@ namespace EcoTaxiAPI.DTO
         public string home_phone { get; set; }
         public string passport_serial_number { get; set; }
         public string passport_issued_by { get; set; }
-        public string passport_issued_date { get; set; }
+        public string passport_issue_date { get; set; }
         public string email { get; set; }
         public bool source_radio { get; set; }
         public bool source_tv { get; set; }
@@ -27,9 +27,9 @@ namespace EcoTaxiAPI.DTO
         public string mother_birthday { get; set; }
         public string mother_place_of_work_position { get; set; }
         public string mother_phone_number { get; set; }
-        public string spouce_birthday { get; set; }
-        public string spouce_place_of_work_position { get; set; }
-        public string spouce_phone_number { get; set; }
+        public string spouse_birthday { get; set; }
+        public string spouse_place_of_work_position { get; set; }
+        public string spouse_phone_number { get; set; }
         public bool education_higher { get; set; }
         public bool education_higher_incomplete { get; set; }
         public bool education_secondary_technical { get; set; }

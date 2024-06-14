@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-    policyBuilder => policyBuilder.WithOrigins("https://EcoTaxi.tj", "http://EcoTaxi.tj")
+    policyBuilder => policyBuilder.WithOrigins("http://www.ecotaxi.tj/", "https://www.ecotaxi.tj/")
                       .AllowAnyMethod()
                       .AllowAnyHeader()); ;
 });
