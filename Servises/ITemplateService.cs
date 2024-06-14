@@ -1,5 +1,4 @@
-﻿using EcoTaxiAPI.Models;
-using EcoTaxiAPI.DTO;
+﻿using EcoTaxiAPI.DTO;
 
 namespace EcoTaxiAPI.Services
 {
