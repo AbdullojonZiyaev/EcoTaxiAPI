@@ -14,11 +14,11 @@ namespace EcoTaxiAPI.Models
         public string passport_issued_by { get; set; }
         public string passport_issued_date { get; set; }
         public string email { get; set; }
-        public bool source_radio { get; set; }
-        public bool source_tv { get; set; }
-        public bool source_newspaper { get; set; }
-        public bool source_website { get; set; }
-        public bool source_job_center { get; set; }
+        public string source_radio { get; set; }
+        public string source_tv { get; set; }
+        public string source_newspaper { get; set; }
+        public string source_website { get; set; }
+        public string source_job_center { get; set; }
         public string marital_status { get; set; }
         public string children_info { get; set; }
         public string children_birthday { get; set; }
@@ -31,9 +31,9 @@ namespace EcoTaxiAPI.Models
         public string spouce_birthday { get; set; }
         public string spouce_place_of_work_position { get; set; }
         public string spouce_phone_number { get; set; }
-        public bool education_higher { get; set; }
-        public bool education_higher_incomplete { get; set; }
-        public bool education_secondary_technical { get; set; }
+        public string education_higher { get; set; }
+        public string education_higher_incomplete { get; set; }
+        public string education_secondary_technical { get; set; }
         public string university { get; set; }
         public string study_years { get; set; }
         public string specialty { get; set; }
@@ -67,9 +67,9 @@ namespace EcoTaxiAPI.Models
         public string criminal_record { get; set; }
         public string acquaintances { get; set; }
         public string expected_salary { get; set; }
-        public bool probation_agreement { get; set; }
+        public string probation_agreement { get; set; }
         public string can_start_work_date { get; set; }
-        public bool additional_info_consent { get; set; }
+        public string additional_info_consent { get; set; }
     }
 }
 

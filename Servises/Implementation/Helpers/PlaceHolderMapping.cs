@@ -18,11 +18,11 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{PassportIssuedBy}", anketaDTO.passport_issued_by },
                 { "{PassportIssuedDate}", anketaDTO.passport_issue_date },
                 { "{Email}", anketaDTO.email },
-                { "{SourceRadio}", anketaDTO.source_radio ? "хо" : "не" },
-                { "{SourceTV}", anketaDTO.source_tv ? "хо" : "не" },
-                { "{SourceNewspaper}", anketaDTO.source_newspaper ? "хо" : "не" },
-                { "{SourceWebsite}", anketaDTO.source_website ? "хо" : "не" },
-                { "{SourceJobCenter}", anketaDTO.source_job_center ? "хо" : "не" },
+                { "{SourceRadio}", anketaDTO.source_radio.toLower() == "yes" ? "хо" : "не"},
+                { "{SourceTV}", anketaDTO.source_tv.toLower() == "yes" ? "хо" : "не" },
+                { "{SourceNewspaper}", anketaDTO.source_newspaper.toLower() == "yes" ? "хо" : "не" },
+                { "{SourceWebsite}", anketaDTO.source_website.toLower() == "yes" ? "хо" : "не" },
+                { "{SourceJobCenter}", anketaDTO.source_job_center.toLower() == "yes" ? "хо" : "не" },
                 { "{MaritalStatus}", anketaDTO.marital_status },
                 { "{ChildrenInfo}", anketaDTO.children_info },
                 { "{ChildrenBirthday}", anketaDTO.children_birthday },
@@ -35,7 +35,10 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{SpouceBirthday}", anketaDTO.spouse_birthday },
                 { "{SpouceWorkPosition}", anketaDTO.spouse_place_of_work_position },
                 { "{SpoucePhoneNumber}", anketaDTO.spouse_phone_number },
-                { "{Education}", anketaDTO.education_higher ? "оли" : anketaDTO.education_higher_incomplete ? "олии нопура" : anketaDTO.education_secondary_technical ? "миёнаи техники" : "" },
+                { "{Education}",
+                anketaDTO.education_higher.toLower() == "yes" ? "оли" :
+                anketaDTO.education_higher_incomplete.toLower() == "yes" ? "олии нопура" :
+                anketaDTO.education_secondary_technical.toLower() == "yes" ? "миёнаи техники" : "" },
                 { "{University}", anketaDTO.university },
                 { "{StudyYears}", anketaDTO.study_years },
                 { "{Speciality}", anketaDTO.specialty },
@@ -69,9 +72,9 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{CriminalRecord}", anketaDTO.criminal_record },
                 { "{Acquintances}", anketaDTO.acquaintances },
                 { "{expectedSalary}", anketaDTO.expected_salary},
-                { "{ProbationAgreemnet}", anketaDTO.probation_agreement ? "Бале" : "" },
+                { "{ProbationAgreemnet}", anketaDTO.probation_agreement.toLower() == "yes" ? "Бале" : "" },
                 { "{canStartWorkDate}", anketaDTO.can_start_work_date },
-                { "{AdditionalInfoConsent}", anketaDTO.additional_info_consent ? "Бале" : "" }
+                { "{AdditionalInfoConsent}", anketaDTO.additional_info_consent.toLower() == "yes" ? "Бале" : "" }
             };
         }
     }
