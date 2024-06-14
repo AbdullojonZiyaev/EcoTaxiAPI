@@ -2,6 +2,8 @@ using EcoTaxiAPI.Middleware;
 using EcoTaxiAPI.Services;
 using Microsoft.Extensions.Options;
 
+string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,8 +12,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins",
-    builder => builder.WithOrigins("https://EcoTaxi.tj", "http://EcoTaxi.tj")
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+    policyBuilder => policyBuilder.WithOrigins("https://EcoTaxi.tj", "http://EcoTaxi.tj")
                       .AllowAnyMethod()
                       .AllowAnyHeader()); ;
 });
@@ -48,6 +50,9 @@ var app = builder.Build();
 
 //Register Middleware
 app.UseMiddleware<ExceptionMiddleware>();
+
+//enable CORS
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 
