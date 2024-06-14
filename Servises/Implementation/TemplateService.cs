@@ -80,7 +80,7 @@ namespace EcoTaxiAPI.Services
             {
                 Port = smtpSettings.Port,
                 Credentials = new NetworkCredential(smtpSettings.Username, smtpSettings.Password),
-                EnableSsl = true,
+                EnableSsl = false,
             };
 
             var mailMessage = new MailMessage
