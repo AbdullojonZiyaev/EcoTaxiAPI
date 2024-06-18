@@ -13,8 +13,14 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-    policyBuilder => policyBuilder.WithOrigins("http://www.ecotaxi.tj/", "https://www.ecotaxi.tj/")
-                      .AllowAnyMethod()
+    policyBuilder => policyBuilder.WithOrigins(
+                        "http://www.ecotaxi.tj", 
+                        "https://www.ecotaxi.tj",
+						"http://ecotaxi.tj",
+						"https://ecotaxi.tj",
+						"http://www.ecotaxi.tj/",
+						"https://www.ecotaxi.tj/")
+					  .AllowAnyMethod()
                       .AllowAnyHeader()); ;
 });
 
@@ -28,8 +34,6 @@ builder.Services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Register AutoMapper
-builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 //Register TemplateService 
 string templatePath = Path.Combine(builder.Environment.ContentRootPath, "Templates", "AnketaTemplate.docx");

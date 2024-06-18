@@ -1,16 +1,16 @@
-﻿using EcoTaxiAPI.DTO;
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Net.Mail;
 using System.Net;
 using EcoTaxiAPI.Exceptions;
 using EcoTaxiAPI.Services.Implementation.Helpers;
+using EcoTaxiAPI.Models;
 
 namespace EcoTaxiAPI.Services
 {
     public class TemplateService(string templatePath, SmtpSettings smtpSettings) : ITemplateService
     {
-        public MemoryStream FillTemplate(AnketaDTO anketaDTO)
+        public MemoryStream FillTemplate(Anketa anketaDTO)
         {
             try {
                 var memoryStream = new MemoryStream();

@@ -1,21 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using EcoTaxiAPI.Models;
-using EcoTaxiAPI.DTO;
 using EcoTaxiAPI.Services;
-using AutoMapper;
 
 namespace EcoTaxiAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AnketaController( ITemplateService _templateService, IMapper _mapper) : ControllerBase
+    public class AnketaController(ITemplateService _templateService) : ControllerBase
     {
 
         [HttpPost]
-        public IActionResult Post([FromBody] AnketaDTO anketaDTO)
+        public IActionResult Post([FromForm] Anketa anketaDTO)
         {
 
-            var anketa = _mapper.Map<Anketa>(anketaDTO);
 
             var documentStream = _templateService.FillTemplate(anketaDTO);
 

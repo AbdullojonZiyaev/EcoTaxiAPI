@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using Newtonsoft.Json;
+using System.Text.Json;
 using EcoTaxiAPI.Exceptions;
 
 namespace EcoTaxiAPI.Middleware
@@ -56,7 +56,7 @@ namespace EcoTaxiAPI.Middleware
                 Detailed = exception.Message // Optional: Include detailed message in development environment only
             };
 
-            return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
+            return context.Response.WriteAsync(JsonSerializer.Serialize(response));
         }
     }
 }
