@@ -36,10 +36,14 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{SpouceBirthday}", anketaDTO.spouse_birthday ?? string.Empty},
                 { "{SpouceWorkPosition}", anketaDTO.spouse_place_of_work_position ?? string.Empty},
                 { "{SpoucePhoneNumber}", anketaDTO.spouse_phone_number ?? string.Empty},
-                { "{Education}",
-                anketaDTO.education_higher?.ToLower() == "higher" ? "оли" :
-                anketaDTO.education_higher_incomplete ?.ToLower() == "higher_incomplete" ? "олии нопура" :
-                anketaDTO.education_secondary_technical?.ToLower() == "secondary_technical" ? "миёнаи техники" : "" },
+                {"{Education}",
+                    ((anketaDTO.education_higher?.ToLower() == "higher" ? "оли" : "") +
+                     (anketaDTO.education_higher_incomplete?.ToLower() == "higher_incomplete" ?
+                       (anketaDTO.education_higher?.ToLower() == "higher" ? ", олӣ нопура" : "олӣ нопура") : "") +
+                        (anketaDTO.education_secondary_technical?.ToLower() == "secondary_technical" ?
+                          ((anketaDTO.education_higher?.ToLower() == "higher" ||
+                            anketaDTO.education_higher_incomplete?.ToLower() == "higher_incomplete") ?
+                          ", миёнаи техники" : "миёнаи техники") : ""))},
                 { "{University}", anketaDTO.university ?? string.Empty},   
                 { "{StudyYears}", anketaDTO.study_years ?? string.Empty},
                 { "{Speciality}", anketaDTO.specialty ?? string.Empty},
