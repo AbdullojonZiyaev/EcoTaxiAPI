@@ -12,12 +12,8 @@ namespace EcoTaxiAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromForm] Anketa anketaDTO)
         {
-
-
             var documentStream = _templateService.FillTemplate(anketaDTO);
-
             _templateService.SendEmailWithAttachment(documentStream, anketaDTO.full_name + " Anketa Document", anketaDTO.full_name + " anketa");
-
             return Ok("Email sent.");
         }
 
