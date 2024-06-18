@@ -19,11 +19,11 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{PassportIssuedBy}", anketaDTO.passport_issued_by?? string.Empty },
                 { "{PassportIssuedDate}", anketaDTO.passport_issue_date ?? string.Empty},
                 { "{Email}", anketaDTO.email ?? string.Empty },
-                { "{SourceRadio}", anketaDTO.source_radio?.ToLower() == "yes" ? "хо" : "не"},
-                { "{SourceTV}", anketaDTO.source_tv?.ToLower() == "yes" ? "хо" : "не" },
-                { "{SourceNewspaper}", anketaDTO.source_newspaper ?.ToLower() == "yes" ? "хо" : "не" },
-                { "{SourceWebsite}", anketaDTO.source_website ?.ToLower() == "yes" ? "хо" : "не" },
-                { "{SourceJobCenter}", anketaDTO.source_job_center ?.ToLower() == "yes" ? "хо" : "не" },
+                { "{SourceRadio}", anketaDTO.source_radio?.ToLower() == "radio" ? "хо" : ""},
+                { "{SourceTV}", anketaDTO.source_tv?.ToLower() == "tv" ? "хо" : "" },
+                { "{SourceNewspaper}", anketaDTO.source_newspaper ?.ToLower() == "newspaper" ? "хо" : "" },
+                { "{SourceWebsite}", anketaDTO.source_website ?.ToLower() == "website" ? "хо" : "" },
+                { "{SourceJobCenter}", anketaDTO.source_job_center ?.ToLower() == "job_center" ? "хо" : "" },
                 { "{MaritalStatus}", anketaDTO.marital_status ?? string.Empty },
                 { "{ChildrenInfo}", anketaDTO.children_info ?? string.Empty },
                 { "{ChildrenBirthday}", anketaDTO.children_birthday ?? string.Empty },
@@ -37,9 +37,9 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{SpouceWorkPosition}", anketaDTO.spouse_place_of_work_position ?? string.Empty},
                 { "{SpoucePhoneNumber}", anketaDTO.spouse_phone_number ?? string.Empty},
                 { "{Education}",
-                anketaDTO.education_higher?.ToLower() == "yes" ? "оли" :
-                anketaDTO.education_higher_incomplete ?.ToLower() == "yes" ? "олии нопура" :
-                anketaDTO.education_secondary_technical?.ToLower() == "yes" ? "миёнаи техники" : "" },
+                anketaDTO.education_higher?.ToLower() == "higher" ? "оли" :
+                anketaDTO.education_higher_incomplete ?.ToLower() == "higher_incomplete" ? "олии нопура" :
+                anketaDTO.education_secondary_technical?.ToLower() == "secondary_technical" ? "миёнаи техники" : "" },
                 { "{University}", anketaDTO.university ?? string.Empty},   
                 { "{StudyYears}", anketaDTO.study_years ?? string.Empty},
                 { "{Speciality}", anketaDTO.specialty ?? string.Empty},
@@ -73,9 +73,9 @@ namespace EcoTaxiAPI.Services.Implementation.Helpers
                 { "{CriminalRecord}", anketaDTO.criminal_record ?? string.Empty},
                 { "{Acquintances}", anketaDTO.acquaintances ?? string.Empty},
                 { "{expectedSalary}", anketaDTO.expected_salary?? string.Empty},
-                { "{ProbationAgreemnet}", anketaDTO.probation_agreement?.ToLower() == "yes" ? "Бале" : "" },
+                { "{ProbationAgreemnet}", anketaDTO.probation_agreement?.ToLower() == "yes" ? "Бале" : "Рози нестам" },
                 { "{canStartWorkDate}", anketaDTO.can_start_work_date ?? string.Empty },
-                { "{AdditionalInfoConsent}", anketaDTO.additional_info_consent?.ToLower() == "yes" ? "Бале" : "" }
+                { "{AdditionalInfoConsent}", anketaDTO.additional_info_consent?.ToLower() == "yes" ? "Бале" : "Рози Нестам" }
             };
         }
     }
